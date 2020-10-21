@@ -46,9 +46,16 @@ void remove_node(LIST* list, NODE* target)
 
 void swap_node(LIST* list, NODE* node1, NODE* node2)
 {
-	// NULL
+	// null
 	if( node1 == node2 || node1 == NULL || node2 == NULL)
 		return;
+	// avoid loop
+	if( node2->next == node1 )
+	{
+		NODE *tmp = node1;
+		node1 = node2;
+		node2 = tmp;
+	}
 	// fake head
 	NODE *fake_head = new_node(-1);
 	fake_head->next = list->head;

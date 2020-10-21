@@ -14,7 +14,7 @@ int main()
 	insert_node(new_list_list, node_2, node_3);
 	insert_node(new_list_list, node_3, node_4);
 	list_display(new_list_list);
-	swap_node(new_list_list, node_head, node_3);
+	swap_node(new_list_list, node_3, node_2);
 	//bubble_sort(new_list_list);
 	list_display(new_list_list);
 	//bubble_sort(new_list_list);
