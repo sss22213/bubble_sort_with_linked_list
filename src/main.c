@@ -16,7 +16,11 @@ int main()
 	list_display(new_list_list);
 	swap_node(new_list_list, node_head, node_1);
 	list_display(new_list_list);
-	bubble_sort(new_list_list);
+	swap_node(new_list_list, node_1, node_head);
+	list_display(new_list_list);
+	swap_node(new_list_list, node_1, node_2);
+	list_display(new_list_list);
+	swap_node(new_list_list, node_2, node_1);
 	list_display(new_list_list);
 	return 0;
 }
