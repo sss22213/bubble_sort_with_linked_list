@@ -9,6 +9,7 @@ int main()
 	NODE *node_2 = new_node(-19);
 	NODE *node_3 = new_node(8);
 	NODE *node_4 = new_node(4);
+	NODE *node_5 = new_node(6);
 	insert_node(new_list_list, node_head, node_1);
 	insert_node(new_list_list, node_1, node_2);
 	insert_node(new_list_list, node_2, node_3);
@@ -20,7 +21,7 @@ int main()
 	list_display(new_list_list);
 	swap_node(new_list_list, node_1, node_2);
 	list_display(new_list_list);
-	swap_node(new_list_list, node_2, node_1);
+	swap_node(new_list_list, node_2, node_5);
 	list_display(new_list_list);
 	return 0;
 }

@@ -57,10 +57,18 @@ void swap_node(LIST* list, NODE* node1, NODE* node2)
 		node2 = tmp;
 	}
 	NODE **ptr_target1 = &list->head;
+	NODE **ptr_target2 = &node1;
 	while(*ptr_target1 != node1)
 	{
-		if(*ptr_target1 == NULL)return;
+		if(*ptr_target1 == NULL)
+			return;
 		ptr_target1 = &(*ptr_target1)->next;
+	}
+	while(*ptr_target2 != node2)
+	{
+		if(*ptr_target2 == NULL)
+			return;
+		ptr_target2 = &(*ptr_target2)->next;
 	}
 	// swap
 	*ptr_target1 = node2;
