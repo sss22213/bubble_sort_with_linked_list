@@ -6,7 +6,8 @@ LIST* new_list(NODE* head)
 	if(head == NULL)
 		return NULL;
 	LIST* new_list_impl = (LIST*)calloc(1, sizeof(LIST));
-	if(new_list_impl == NULL || head == NULL)return NULL;
+	if(new_list_impl == NULL || head == NULL)
+		return NULL;
 	new_list_impl->head = head;
 	return new_list_impl;
 }
@@ -14,7 +15,8 @@ LIST* new_list(NODE* head)
 NODE* new_node(int32_t val)
 {
 	NODE* new_node_impl = (NODE*)calloc(1, sizeof(NODE));
-	if(new_node_impl == NULL)return NULL;
+	if(new_node_impl == NULL)
+		return NULL;
 	new_node_impl->val = val;
 	return new_node_impl;
 }
@@ -26,7 +28,8 @@ void insert_node(LIST* list, NODE* target, NODE *new_node)
 	NODE **ptr_list = &list->head;
 	while( *ptr_list != target)
 	{
-		if(*ptr_list == NULL)return;
+		if(*ptr_list == NULL)
+			return;
 		ptr_list = &(*ptr_list)->next;
 	}
 	new_node->next = (*ptr_list)->next;
@@ -38,7 +41,8 @@ void remove_node(LIST* list, NODE* target)
 	NODE **ptr_list = &list->head;
 	while( *ptr_list != target)
 	{
-		if(*ptr_list == NULL)return;
+		if(*ptr_list == NULL)
+			return;
 		ptr_list = &(*ptr_list)->next;
 	}
 	*ptr_list = target->next;
@@ -120,6 +124,8 @@ int get_node_val(LIST *list, int idx)
 	NODE **ptr_list = &list->head;
 	while(idx--)
 	{
+		if(*ptr_list == NULL)
+			return -1;
 		*ptr_list = (*ptr_list)->next;
 	}
 	return (*ptr_list)->val;
